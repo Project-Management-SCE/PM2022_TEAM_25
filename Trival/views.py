@@ -61,3 +61,7 @@ def worker_signup(request):
             my_customer_group[0].user_set.add(user)
         return HttpResponseRedirect('workerlogin')
     return render(request, 'workersignup.html', context=mydict)
+
+
+def HomePageadmin(request):
+    return render(request,'HomePageadmin.html')

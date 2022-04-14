@@ -25,4 +25,5 @@ urlpatterns = [
     path('logout', views.logOut, name='logout'),
     path('login', views.afterlogin, name='login'),
     path('workerlogin', LoginView.as_view(template_name='login_page.html'), name='workerlogin'),
+    path('HomePageadmin', views.HomePageadmin, name='HomePageadmin'),
 ]
