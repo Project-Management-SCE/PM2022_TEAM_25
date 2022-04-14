@@ -26,7 +26,9 @@ def afterlogin(request):
             if user.is_staff:
                 auth.login(request, user)
                 return redirect('HomePageadmin')
-
+            elif user is not None and user.groups.filter(name='WORKER').exists():
+                auth.login(request, user)
+                return redirect('homePageWorker')
 
 
 
@@ -34,7 +36,8 @@ def afterlogin(request):
     else:
         if  request.user.is_staff:
             return redirect('HomePageadmin')
-
+        elif request.user.groups.filter(name='WORKER'):
+            return redirect('homePageWorker')
 
 
 def logOut(request):
