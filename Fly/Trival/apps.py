@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class PassengerConfig(AppConfig):
+class TrivalConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'Passenger'
+    name = 'Trival'
