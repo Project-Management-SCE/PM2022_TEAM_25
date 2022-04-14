@@ -31,3 +31,9 @@ def afterlogin(request):
     else:
         if  request.user.is_staff:
             return redirect('HomePageadmin')
+
+
+
+def logOut(request):
+    logout(request)
+    return redirect('workerlogin')
