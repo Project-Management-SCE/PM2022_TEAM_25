@@ -1,5 +1,5 @@
 """
-ASGI config for Fly project.
+ASGI config for Fly1 project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

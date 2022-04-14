@@ -1,5 +1,5 @@
 """
-WSGI config for Fly project.
+WSGI config for Fly1 project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
