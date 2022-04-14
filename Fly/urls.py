@@ -21,6 +21,8 @@ from Trival import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('homePage', views.home_view, name='homaPage'),
+    path('workersignup', views.worker_signup, name='workersignup'),
+    path('logout', views.logOut, name='logout'),
     path('login', views.afterlogin, name='login'),
     path('workerlogin', LoginView.as_view(template_name='login_page.html'), name='workerlogin'),
 ]
