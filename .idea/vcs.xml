@@ -4,6 +4,11 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$USER_HOME$/Desktop/PassengerForm" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/PassengerForm" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PassengerForm/PM2022_TEAM_25" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PassengerForm/PM2022_TEAM_25-1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PassengerForm/PM2022_TEAM_25-2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PassengerForm/PM2022_TEAM_25-3" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/PassengerForm/PassengerWebsite" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PassengerForm/Portfolio" vcs="Git" />
   </component>
 </project>
