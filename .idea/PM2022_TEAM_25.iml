@@ -19,6 +19,8 @@
     <orderEntry type="jdk" jdkName="Python 3.7" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="PassengerForm" />
+    <orderEntry type="module" module-name="Passenger" />
+    <orderEntry type="module" module-name="PassengerWebsite" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
