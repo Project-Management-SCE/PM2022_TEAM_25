@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+
+<head>
+  <!-- Design by Ground Tutorial (groundtutorial.com) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <title>Fly Easily </title>
+  <style media="screen">
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Roboto', sans-serif;
+text-decoration: none;
+letter-spacing: 1px;
+}
+
+body{
+background: url("https://pro2-bar-s3-cdn-cf1.myportfolio.com/30829e4529226b2ee8bbbc6d7fc84bed/201dc759-a8c1-4e39-a5fd-c8ec405786ae_rw_3840.jpg?h=a758ce126c40819f747ef970fb516067");
+background-position: center;
+background-repeat: no-repeat;
+}
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  src: url("https://wallpaperaccess.com/full/2636894.jpg");
+}
+
+.wrapper{
+max-width: 350px;
+height: 100%;
+margin: 50px auto;
+padding: 10px;
+}
+
+.wrapper .title h1{
+text-align: center;
+color: #000000;
+font-family:'Brus Script MT', cursive;
+margin-bottom: 30px;
+}
+
+.login-container{
+width: 100%
+}
+
+.login-container .email{
+margin-bottom: 35px;
+position: relative;
+}
+
+.login-container .fas{
+position: absolute;
+bottom: 15px;
+right: 25px;
+font-size: 25px;
+color: #000000;
+}
+
+.login-container .label{
+display: block;
+color: rgb(255, 255, 255);
+margin-bottom: 5px;
+font-weight: bold;
+font-family:'Brus Script MT', cursive;
+}
+
+.login-container .input{
+max-width: 325px;
+width: 100%;
+border: 2px solid rgb(255, 255, 255);
+padding: 20px 15px;
+font-size: 16px;
+border-radius: 5px;
+background: rgba(105, 105, 105, 0.55);
+font-weight: bold;
+outline: none;
+}
+
+::-webkit-input-placeholder {
+/* Chrome/Opera/Safari */
+color: #d2dbe4;
+}
+::-moz-placeholder {
+/* Firefox 19+ */
+color: #d2dbe4;
+}
+:-ms-input-placeholder {
+/* IE 10+ */
+color: #d2dbe4;
+}
+
+.login-container .password{
+margin-bottom: 20px;
+position: relative;
+color: #000080;
+font-weight: bold;
+font-family:'Brus Script MT', cursive;
+
+}
+
+
+
+<!---->
+.login{
+background: #0101106e;
+text-align:  center;
+border-radius: 5px;
+padding: 30px;
+
+}
+
+
+
+.login a{
+font-size: 20px;
+color: #f0f8ff;
+}
+  </style>
+</head>
+
+
+<body>
+  <form action="register" method="POST" >
+    {% csrf_token %}
+
+
+  <div class="wrapper">
+    <h1 id="title">
+      <a style="background-color: rgba(4, 241, 201, 0.323);">Login Form</a><br><br>
+    </h1>
+
+    <div class="login-container">
+      
+
+      <div class="password">
+        <label class="label">Password</label>
+        <input type="password" class="input" required placeholder="*********" name="password" >
+        <input type="checkbox" style="rgb(255, 255, 255)" onclick="myFunction()">Show Password
+        <script>
+          function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+              x.type = "text";
+            } else {
+              x.type = "password";
+            }
+          }
+          </script>
+        <i class="fas fa-lock"></i>
+
+
+        <div class="password">
+            <label class="label">Enter password again</label>
+            <input type="password" class="input" required placeholder="*********" name="password" >
+            <i class="fas fa-address-book"></i>
+          </div>
+      </div>
+
+     
+
+      <div class="login">
+        <a href="#" style="background-color: rgba(4, 241, 201, 0.323);">submet</a><br><br>
+
+        <div class="Signup">
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
