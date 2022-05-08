@@ -1,4 +1,4 @@
-"""PassengerWebsite URL Configuration
+"""djangoProject10 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -14,40 +14,24 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.auth.views import LoginView
 from django.urls import path
-#from . import views
-from paSSengersformes.views import Index,Signup,Homepage,Indexes,forgot
-
-
-
-
+from travil import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',Homepage,name="home"),
-    path('register/',Signup,name="signup"),
-    path('login/', Index,name="login"),
-    path('login/Indexes/', Indexes,name="Indexes"),
-    path('login/register/',Signup,name="signup"),
-    path('login/forgot/',forgot,name="forgot"),
-    path('login/Indexes/home/',Homepage,name="home"),
+    path('', views.home_view),
+    path('homePage', views.home_view,name='homaPage'),
+    path('homePageWorker', views.homePageWorker,name='homePageWorker'),
+    path('workersignup', views.worker_signup, name='workersignup'),
+    path('login', views.afterlogin, name='login'),
+    path('workerlogin', LoginView.as_view(template_name='login_page.html'), name='workerlogin'),
+    path('logout', views.logOut, name='logout'),
+    path('HomePageadmin', views.HomePageadmin, name='HomePageadmin'),
+    path('Passengersignup', views.Passenger_signup, name='SingupPassenger'),
+    path('PassengerHomepage', views.homePagePassenger, name='PassengerHomepage'),
+    path('logOut2', views.logOut2, name='logOut2'),
+    path('logOut3', views.logOut3, name='logOut3'),
+    path('About', views.About, name='About')
 
 ]
-
-
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
-urlpatterns += staticfiles_urlpatterns()
-
-
-
-
-
-
-
-
-
-
-
-
-
