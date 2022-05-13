@@ -1,0 +1,78 @@
+{%load static%}
+<html lang="en" >
+<head>
+  {% load static %} 
+  <meta charset="UTF-8">
+  <title>Fly Easily </title>
+  <link href="#" rel="stylesheet"><link rel="stylesheet" href="{% static 'orders.css' %}">
+</head>
+
+<div id="container_1">
+  
+  <h1 id="title">
+    <a> Orders Page.</a>
+</h1>
+<p id="description">
+
+</p>
+  
+</div>
+<div id="container_2">
+  
+    <form id="survey-form" method="post" action=".">
+        {% csrf_token %}
+ <label for='first_name'><b>First Name : </b></label>
+		        <input type='text' placeholder="Enter your first name" name='name' Enter your name><br>
+
+
+        <br>
+ <label for="Food">Food <br></label><span style=" !important; display: inline; float: none;"></span>     
+ <select id="Food" name="Food" class="form">
+<option value="Food">Food</option>
+<option value="breakfast">breakfast</option>
+<option value="lunch">lunch</option>
+<option value="dinner">dinner</option>
+</select> <br>
+<br>
+<label for="Cold drinks">Cold drinks <br></label><span style=" !important; display: inline; float: none;"></span>     
+<select id="Cold drink" name="cold" class="form">
+<option value="Cold drink"> Drink </option>
+<option value="cocacola">cocacola</option>
+<option value="fanta">fanta</option>
+<option value="sprite">sprite</option>
+<option value="sprite zero">sprite zero</option>
+<option value="cocacola zero">cocacola zero</option>
+<option value="XL">XL</option>
+<option value="BLU">BLU</option>
+<option value="soda water">soda water</option>
+<option value="fuse tea">fuse tea</option>
+<option value="apple">apple</option>
+<option value="orange">orange</option>
+<option value="lemonmint">lemonmint</option>
+<option value="grape">grape</option>
+<option value="grapefruit">grapefruit</option>
+</select> <br>
+<br>
+<label for="Hot drink">Hot drink <br></label>
+<span style=" !important; display: inline; float: none;"></span>     
+<select id="Hot drink" name="hot" class="form">
+<option value="hot">Hot drink</option>
+<option value="tea">tea</option>
+<option value="coffee">coffee</option>
+<option value="milk">milk</option>
+<option value="hot chocolate">hot chocolate</option>
+<option value="cappuccino">cappuccino</option>
+</select> <br>
+<br>
+<label> Other <br>
+<textarea id="other" class="form" placeholder="Order another thing" name="other" rows="4" cols="50">
+</textarea><br>
+<br>
+          
+    <input href="index" type="submit" id="submit" name="submit" value="Submit">
+    </div>
+  </form>
+    
+
+</div>
+</html>
