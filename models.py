@@ -15,38 +15,35 @@ class passengers(models.Model):
     ln = models.CharField(max_length=20, null=False)
     email = models.CharField(max_length=40, null=False)
     phone = models.CharField(max_length=14, null=False)
-    gender = models.CharField(max_length=5, null=False, default="male")
+    gender = models.CharField(max_length=50, null=False, default="male")
     age = models.DateField(null=False,default="01/01/2004")
-    password = models.CharField(max_length=20,null=True)
+    password1 = models.CharField(max_length=20,null=True)
+    password2 = models.CharField(max_length=20,null=True)
     country=models.CharField(max_length=100, null=False,default="country")
-
-
-class orders(models.Model):
-    Chair=models.CharField(max_length=1000,null=True,default="chair")
-    Food =models.CharField(max_length=100, null=True,default="Food")
-    Cold =models.CharField(max_length=100, null=True,default="Cold drink")
-    Hot =models.CharField(max_length=100, null=True,default="Hot drinks")
-    Food =models.CharField(max_length=1000,null=True,default="nothing")
+    class Meta:  
+        db_table = "passengers"  
     
 
 
-
-from django.db import models
-from django.contrib.auth.models import User
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    email_confirmed = models.BooleanField(default=False)
-    # other fields...
+class orders(models.Model):
+    cold =models.CharField(max_length=100, null=True,default="Cold drink")
+    hot =models.CharField(max_length=100, null=True,default="Hot drinks")
+    chair=models.CharField(max_length=100,null=False,primary_key=True)
+    food =models.CharField(max_length=100, null=True,default="Food")
+    other =models.CharField(max_length=1000,null=True,default="nothing")
+    class Meta:  
+        db_table = "orders"  
 
 
 
 
 
 
-
+class ratings(models.Model):
+    name= models.CharField(max_length=20,null=True,default="name")
+    worker=models.CharField(max_length=20,null=False,primary_key=True)
+    rating=models.CharField(max_length=3,null=False,default="0")
+    
 
 
 
