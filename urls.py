@@ -1,4 +1,4 @@
-"""PassengerWebsite URL Configuration
+"""djangoProject10 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -14,45 +14,32 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.auth.views import LoginView
 from django.urls import path
-#from . import views
-from paSSengersformes.views import Index,signup,Homepage,Indexes,forgot,Orders,show,rating
-
-
-
-
-
+from travil.views import login,home,orders,forgot,show,showre,reports,About,logout
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',Homepage,name="home"),
-    path('register/',signup,name="signup"),
-    path('login/', Index,name="login"),
-    path('login/Indexes/', Indexes,name="Indexes"),
-    path('login/register/',signup,name="signup"),
-    path('login/forgot/',forgot,name="forgot"),
-    path('login/Indexes/home/',Homepage,name="home"),
-    path('login/Indexes/orders/',Orders,name="orders"),
-    path('login/Indexes/show/',show,name="show"),
-    path('login/Indexes/rating/',rating,name="rating"),
+    path('',login,name="index"),
+    path('Indexes/',home,name="Indexes"),
+    path('Indexes/',home,name="Indexes"),
+    path('Indexes/orders/',orders,name="orders"),
+    path('forgot/',forgot,name="forgot"),
+    path('Indexes/show/',show,name="show"),
+    path('Indexes/reports/',reports,name="reports"),
+    path('Indexes/showre/',showre,name="showre"),
+    path('Indexes/About/',About,name="About"),
+    path('Indexes/logout/',logout,name="logout"),
+    path('Indexes//Indexes/index/',login,name="index"),
 
+
+
+
+
+
+
+
+
+
+    
 
 ]
-
-
-
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
-urlpatterns += staticfiles_urlpatterns()
-
-
-
-
-
-
-
-
-
-
-
-
-
