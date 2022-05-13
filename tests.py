@@ -1,42 +1,51 @@
 from django.test import TestCase
-from django.contrib.auth import get_user_model
+from django.urls import reverse
+from paSSengersformes.models import passengers ,orders
+from . import views
+
 # Create your tests here.
 
-class UsersManagersTests(TestCase):
+class HomeAppViewTestCase(TestCase):
+    def init_passengers(self):
+        self.passengers = passengers()
 
-    def test_create_user(self):
-        User = get_user_model()
-        user = User.objects.create_user(email='normal@user.com', password='foo123456')
-        self.assertEqual(user.email, 'normal@user.com')
-        self.assertTrue(user.is_active)
-        self.assertFalse(user.is_staff)
-        self.assertFalse(user.is_superuser)
-        try:
-            # username is None for the AbstractUser option
-            # username does not exist for the AbstractBaseUser option
-            self.assertIsNone(user.username)
-        except AttributeError:
-            pass
-        with self.assertRaises(TypeError):
-            User.objects.create_user()
-        with self.assertRaises(TypeError):
-            User.objects.create_user(email='')
-        with self.assertRaises(ValueError):
-            User.objects.create_user(email='', password="foo")
+    def setUp(self):
+        self.user_1 = passengers.objects.create_user(email='email',  password='P')
+        self.user_1.role = 1
 
-    def test_create_superuser(self):
-        User = get_user_model()
-        admin_user = User.objects.create_superuser(email='super@user.com', password='foo')
-        self.assertEqual(admin_user.email, 'super@user.com')
-        self.assertTrue(admin_user.is_active)
-        self.assertTrue(admin_user.is_staff)
-        self.assertTrue(admin_user.is_superuser)
+    def tearDown(self):
+        self.user_1.delete()
+
+    def test_home_get(self):
+        self.passengers.login(email='email', password='P')
+        response = self.client.get(reverse('home'))
+        # print(response.status_code)
+        self.assertEqual(response.status_code, 200)
+
+   
+
+
         try:
-            # username is None for the AbstractUser option
-            # username does not exist for the AbstractBaseUser option
-            self.assertIsNone(admin_user.username)
-        except AttributeError:
+            response = self.passengers.post(reverse('passengers'), data=json.dumps(passengers), content_type='application/json')
+            self.assertEqual(response.status_code, 403)
+
+        except Exception as e:
             pass
-        with self.assertRaises(ValueError):
-            User.objects.create_superuser(
-                email='super@user.com', password='', is_superuser=False)
+
+
+
+def test_orders_post(self):
+        orders_info = {}
+        orders_info['chair'] = "Chair"
+        orders_info['food'] = "Food"
+        orders_info['hot'] = "Hot Drink"
+        orders_info['cold'] = "Cold Drink"
+        orders_info['other'] = "other"
+
+
+        try:
+            response = self.orders.post(reverse('passengers'), data=json.dumps(passengers), content_type='application/json')
+            self.assertEqual(response.status_code, 403)
+
+        except Exception as e:
+            pass
